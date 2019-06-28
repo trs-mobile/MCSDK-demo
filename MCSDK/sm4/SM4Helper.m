@@ -25,7 +25,7 @@
     unsigned char cipherOutChar[plainInDataLength + p];
     testEncodejiami(plainInDataLength + p, plainInChar, cipherOutChar);
     NSData *cipherTextData =  [[NSData alloc]initWithBytes:cipherOutChar length:sizeof(cipherOutChar)];
-    NSLog(@"密文NSData=%@",cipherTextData);
+    //NSLog(@"密文NSData=%@",cipherTextData);
 
     return cipherTextData;
 }
@@ -45,7 +45,7 @@
     testEncodejiami(plainInDataLength + p, plainInChar, cipherOutChar);
     //对加密的数据输出
     NSData *cipherTextData =  [[NSData alloc]initWithBytes:cipherOutChar length:sizeof(cipherOutChar)];
-    NSLog(@"密文NSData=%@",cipherTextData);
+    //NSLog(@"密文NSData=%@",cipherTextData);
     
     return cipherTextData;
 }
@@ -67,7 +67,7 @@
     NSData *outData = [[NSData alloc]initWithBytes:plainOutWithoutPadding length:sizeof(plainOutWithoutPadding)];
     
     NSString *str =[[NSString alloc]initWithData:outData encoding:NSUTF8StringEncoding];
-    NSLog(@"解密得到的明文是:%@",str);
+    //NSLog(@"解密得到的明文是:%@",str);
     
     return str;
 }
@@ -154,7 +154,7 @@
                                                    options:NSJSONWritingPrettyPrinted
                                                      error:&error];
     if(error) {
-        NSLog(@"字典转化为JSON字符串错误: %@", error.localizedDescription);
+        //NSLog(@"字典转化为JSON字符串错误: %@", error.localizedDescription);
     }
     else {
         jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];

@@ -52,7 +52,7 @@
     
     id __success = ^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
-        NSLog(@"请求成功 : %@ --> %ld", task.response.URL.absoluteString, ((NSHTTPURLResponse *)task.response).statusCode);
+        //NSLog(@"请求成功 : %@ --> %ld", task.response.URL.absoluteString, ((NSHTTPURLResponse *)task.response).statusCode);
 
         NSString *strEncode = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         NSDictionary *response = [SM4Helper convertjsonStringToDict:[SM4Helper SM4DecodeWithData: [SM4Helper hexStringToByte:strEncode]]];
@@ -62,7 +62,7 @@
     
     id __failure = ^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
-        NSLog(@"请求失败 : %@ --> %@", (task.response.URL.absoluteString ? : url), error.localizedDescription);
+        //NSLog(@"请求失败 : %@ --> %@", (task.response.URL.absoluteString ? : url), error.localizedDescription);
         
         if(completion) {completion(NO, nil, error);}
     };
