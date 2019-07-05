@@ -7,8 +7,7 @@
 //
 
 #import "MCSDK.h"
-#import "SM4Helper.h"
-#import "AFHTTP+Provider.h"
+#import "SM4HTTP.h"
 
 @interface MCSDK ()
 
@@ -52,9 +51,7 @@
     NSString *url = [[MCSDK sharedInsatnce].mcUrl stringByAppendingPathComponent:@"appmedia/getChannelsBySiteId"];
     NSDictionary *params = @{@"siteId" : @(siteId)};
     
-    [AFHTTP SM4request:url method:@"POST" parameters:params progress:nil completion:^(BOOL success, id  _Nullable response, NSError * _Nullable error) {
-        
-    }];
+    [SM4HTTP request:url parameters:params completion:completion];
 }
 
 /**
@@ -73,9 +70,7 @@
                              @"pageNo" : @(pageNo),
                              @"pageSize" : @(pageSize)};
     
-    [AFHTTP SM4request:url method:@"POST" parameters:params progress:nil completion:^(BOOL success, id  _Nullable response, NSError * _Nullable error) {
-        
-    }];
+    [SM4HTTP request:url parameters:params completion:completion];
 }
 
 /**
@@ -89,9 +84,7 @@
     NSString *url = [[MCSDK sharedInsatnce].mcUrl stringByAppendingPathComponent:@"appmedia/getDocument"];
     NSDictionary *params = @{@"docId" : @(docId)};
     
-    [AFHTTP SM4request:url method:@"POST" parameters:params progress:nil completion:^(BOOL success, id  _Nullable response, NSError * _Nullable error) {
-        
-    }];
+    [SM4HTTP request:url parameters:params completion:completion];
 }
 
 @end

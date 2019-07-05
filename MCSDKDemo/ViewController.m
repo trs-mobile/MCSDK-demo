@@ -42,24 +42,24 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
     switch (indexPath.row) {
-        case 0: //栏目数94
+        case 0: //栏目数941
             [MCSDK getChannelsBySiteId:941 completion:^(BOOL success, NSDictionary * _Nonnull ressponse, NSError * _Nonnull error) {
                 
             }];
             break;
         case 1: //栏目列表
             [MCSDK getChnlDocs:9820 pageNo:1 pageSize:20 completion:^(BOOL success, NSDictionary * _Nonnull ressponse, NSError * _Nonnull error) {
-                
+               
             }];
             break;
         case 2: //稿件详情
             [MCSDK getDocument:887652 completion:^(BOOL success, NSDictionary * _Nonnull ressponse, NSError * _Nonnull error) {
-                
+
             }];
             break;
         default:
             break;
-    }
+    }    
 }
 
 @end

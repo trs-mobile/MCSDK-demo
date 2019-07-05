@@ -6,26 +6,21 @@
 //  Copyright © 2016年  TRS. All rights reserved.
 //
 
-#import "AFHTTP+Provider.h"
-#import "SM4Helper.h"
+#import "SM4HTTP.h"
 
-@implementation AFHTTP
+@implementation SM4HTTP
 
 /**
  * 根据url地址请求数据 (真正从服务器请求获取数据)
  * @param url : 请求url地址
- * @param method : 数据方式，在如下常用的GET、POST中选择，默认为GET
  * @param parameters : 传入POST body的参数，需为NSDictionary类型
- * @param progress : 进度回调
  * @param completion : 回调函数
  */
 
-+ (void)SM4request:(NSString * _Nonnull)url
-         method:(NSString * _Nonnull)method
++ (void)request:(NSString * _Nonnull)url
      parameters:(NSDictionary * _Nullable)parameters
-       progress:(progress _Nullable)progress
-     completion:(completion _Nullable)completion{
-    
+     completion:(completion _Nullable)completion
+{
     //url编码，处理请求中含有中文字符
     url = [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     
@@ -44,12 +39,6 @@
                                                          @"application/xml",
                                                          @"text/xml", nil];
     
-    id __progress = ^(NSProgress * _Nonnull _progress) {
-        
-        float _progress_ = (_progress.completedUnitCount * 100 / _progress.totalUnitCount);
-        if(progress) {progress(_progress_);}
-    };
-    
     id __success = ^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         //NSLog(@"请求成功 : %@ --> %ld", task.response.URL.absoluteString, ((NSHTTPURLResponse *)task.response).statusCode);
@@ -67,24 +56,12 @@
         if(completion) {completion(NO, nil, error);}
     };
     
-    if([method.uppercaseString isEqualToString:@"GET"]) {
-        
-        //Creates and runs an `NSURLSessionDataTask` with a `GET` request.
-        [manager GET:url
-          parameters:__parameters
-            progress:__progress
-             success:__success
-             failure:__failure];
-    }
-    else if([method.uppercaseString isEqualToString:@"POST"]) {
-        
-        //Creates and runs an `NSURLSessionDataTask` with a `POST` request.
-        [manager POST:url
-           parameters:__parameters
-             progress:__progress
-              success:__success
-              failure:__failure];
-    }
+    //Creates and runs an `NSURLSessionDataTask` with a `POST` request.
+    [manager POST:url
+       parameters:__parameters
+         progress:nil
+          success:__success
+          failure:__failure];
 }
 
 @end

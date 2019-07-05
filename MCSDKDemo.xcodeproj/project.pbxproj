@@ -16,18 +16,18 @@
 		7925C4F522C51023004DDD2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7925C4F322C51023004DDD2F /* LaunchScreen.storyboard */; };
 		7925C4F822C51023004DDD2F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7925C4F722C51023004DDD2F /* main.m */; };
 		792DBAB222C5B9C500B0547C /* MCSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 792DBAA122C5B9C500B0547C /* MCSDK.m */; };
-		792DBAB422C5B9C500B0547C /* AFHTTP+Provider.m in Sources */ = {isa = PBXBuildFile; fileRef = 792DBAA622C5B9C500B0547C /* AFHTTP+Provider.m */; };
+		792DBAB422C5B9C500B0547C /* SM4HTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 792DBAA622C5B9C500B0547C /* SM4HTTP.m */; };
 		792DBAB522C5B9C500B0547C /* sm4test.c in Sources */ = {isa = PBXBuildFile; fileRef = 792DBAA822C5B9C500B0547C /* sm4test.c */; };
 		792DBAB622C5B9C500B0547C /* sm4.c in Sources */ = {isa = PBXBuildFile; fileRef = 792DBAAB22C5B9C500B0547C /* sm4.c */; };
 		792DBAB722C5B9C500B0547C /* sms4.c in Sources */ = {isa = PBXBuildFile; fileRef = 792DBAAE22C5B9C500B0547C /* sms4.c */; };
 		792DBAB822C5B9C500B0547C /* SM4Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 792DBAAF22C5B9C500B0547C /* SM4Helper.m */; };
-		792DBAC822C5BA6C00B0547C /* AFHTTP+Provider.h in Headers */ = {isa = PBXBuildFile; fileRef = 792DBAA422C5B9C500B0547C /* AFHTTP+Provider.h */; };
+		792DBAC822C5BA6C00B0547C /* SM4HTTP.h in Headers */ = {isa = PBXBuildFile; fileRef = 792DBAA422C5B9C500B0547C /* SM4HTTP.h */; };
 		792DBAC922C5BA6C00B0547C /* sms4.h in Headers */ = {isa = PBXBuildFile; fileRef = 792DBAA922C5B9C500B0547C /* sms4.h */; };
 		792DBACA22C5BA6C00B0547C /* SM4Helper.h in Headers */ = {isa = PBXBuildFile; fileRef = 792DBAAA22C5B9C500B0547C /* SM4Helper.h */; };
 		792DBACB22C5BA6C00B0547C /* sm4test.h in Headers */ = {isa = PBXBuildFile; fileRef = 792DBAAC22C5B9C500B0547C /* sm4test.h */; };
 		792DBACC22C5BA6C00B0547C /* sm4.h in Headers */ = {isa = PBXBuildFile; fileRef = 792DBAAD22C5B9C500B0547C /* sm4.h */; };
 		792DBACD22C5BA7E00B0547C /* MCSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 792DBAA122C5B9C500B0547C /* MCSDK.m */; };
-		792DBACF22C5BA7E00B0547C /* AFHTTP+Provider.m in Sources */ = {isa = PBXBuildFile; fileRef = 792DBAA622C5B9C500B0547C /* AFHTTP+Provider.m */; };
+		792DBACF22C5BA7E00B0547C /* SM4HTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 792DBAA622C5B9C500B0547C /* SM4HTTP.m */; };
 		792DBAD022C5BA7E00B0547C /* sm4test.c in Sources */ = {isa = PBXBuildFile; fileRef = 792DBAA822C5B9C500B0547C /* sm4test.c */; };
 		792DBAD122C5BA7E00B0547C /* sm4.c in Sources */ = {isa = PBXBuildFile; fileRef = 792DBAAB22C5B9C500B0547C /* sm4.c */; };
 		792DBAD222C5BA7E00B0547C /* sms4.c in Sources */ = {isa = PBXBuildFile; fileRef = 792DBAAE22C5B9C500B0547C /* sms4.c */; };
@@ -54,8 +54,8 @@
 		7925C4F622C51023004DDD2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7925C4F722C51023004DDD2F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		792DBAA122C5B9C500B0547C /* MCSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSDK.m; sourceTree = "<group>"; };
-		792DBAA422C5B9C500B0547C /* AFHTTP+Provider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHTTP+Provider.h"; sourceTree = "<group>"; };
-		792DBAA622C5B9C500B0547C /* AFHTTP+Provider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHTTP+Provider.m"; sourceTree = "<group>"; };
+		792DBAA422C5B9C500B0547C /* SM4HTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SM4HTTP.h; sourceTree = "<group>"; };
+		792DBAA622C5B9C500B0547C /* SM4HTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SM4HTTP.m; sourceTree = "<group>"; };
 		792DBAA822C5B9C500B0547C /* sm4test.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sm4test.c; sourceTree = "<group>"; };
 		792DBAA922C5B9C500B0547C /* sms4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sms4.h; sourceTree = "<group>"; };
 		792DBAAA22C5B9C500B0547C /* SM4Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SM4Helper.h; sourceTree = "<group>"; };
@@ -136,24 +136,16 @@
 			children = (
 				792DBAC122C5BA4000B0547C /* MCSDK.h */,
 				792DBAA122C5B9C500B0547C /* MCSDK.m */,
-				792DBAA222C5B9C500B0547C /* Extensions */,
 				792DBAA722C5B9C500B0547C /* sm4 */,
 			);
 			path = MCSDK;
 			sourceTree = SOURCE_ROOT;
 		};
-		792DBAA222C5B9C500B0547C /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				792DBAA422C5B9C500B0547C /* AFHTTP+Provider.h */,
-				792DBAA622C5B9C500B0547C /* AFHTTP+Provider.m */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		792DBAA722C5B9C500B0547C /* sm4 */ = {
 			isa = PBXGroup;
 			children = (
+				792DBAA422C5B9C500B0547C /* SM4HTTP.h */,
+				792DBAA622C5B9C500B0547C /* SM4HTTP.m */,
 				792DBAAA22C5B9C500B0547C /* SM4Helper.h */,
 				792DBAAF22C5B9C500B0547C /* SM4Helper.m */,
 				792DBAAD22C5B9C500B0547C /* sm4.h */,
@@ -206,7 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				792DBAD422C5BB5000B0547C /* MCSDK.h in Headers */,
-				792DBAC822C5BA6C00B0547C /* AFHTTP+Provider.h in Headers */,
+				792DBAC822C5BA6C00B0547C /* SM4HTTP.h in Headers */,
 				792DBAC922C5BA6C00B0547C /* sms4.h in Headers */,
 				792DBACA22C5BA6C00B0547C /* SM4Helper.h in Headers */,
 				792DBACB22C5BA6C00B0547C /* sm4test.h in Headers */,
@@ -410,7 +402,7 @@
 				792DBAB622C5B9C500B0547C /* sm4.c in Sources */,
 				7925C4ED22C51021004DDD2F /* ViewController.m in Sources */,
 				792DBAB722C5B9C500B0547C /* sms4.c in Sources */,
-				792DBAB422C5B9C500B0547C /* AFHTTP+Provider.m in Sources */,
+				792DBAB422C5B9C500B0547C /* SM4HTTP.m in Sources */,
 				7925C4F822C51023004DDD2F /* main.m in Sources */,
 				792DBAB522C5B9C500B0547C /* sm4test.c in Sources */,
 				7925C4EA22C51021004DDD2F /* AppDelegate.m in Sources */,
@@ -422,7 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				792DBACD22C5BA7E00B0547C /* MCSDK.m in Sources */,
-				792DBACF22C5BA7E00B0547C /* AFHTTP+Provider.m in Sources */,
+				792DBACF22C5BA7E00B0547C /* SM4HTTP.m in Sources */,
 				792DBAD022C5BA7E00B0547C /* sm4test.c in Sources */,
 				792DBAD122C5BA7E00B0547C /* sm4.c in Sources */,
 				792DBAD222C5BA7E00B0547C /* sms4.c in Sources */,
