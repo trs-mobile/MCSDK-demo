@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @param completion 操作结果回调
  */
 + (void)getChannelsBySiteId:(NSInteger)siteId
-                 completion:(void(^)(BOOL success, NSDictionary* ressponse, NSError *error))completion;
+                 completion:(void(^)(BOOL success, NSDictionary* response, NSError *error))completion;
 
 /**
  * @brief 获取栏目列表
@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)getChnlDocs:(NSInteger)channelId
              pageNo:(NSInteger)pageNo
            pageSize:(NSInteger)pageSize
-         completion:(void(^)(BOOL success, NSDictionary* ressponse, NSError *error))completion;
+         completion:(void(^)(BOOL success, NSDictionary* response, NSError *error))completion;
 
 /**
  * @brief 获取稿件详情
@@ -43,7 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @param completion 操作结果回调
  */
 + (void)getDocument:(NSInteger)docId
-         completion:(void(^)(BOOL success, NSDictionary* ressponse, NSError *error))completion;
+         completion:(void(^)(BOOL success, NSDictionary* response, NSError *error))completion;
 
 @end
 
