@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MCSDK/MCSDK.h>
 
 @interface ViewController : UITableViewController
 

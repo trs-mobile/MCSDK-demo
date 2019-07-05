@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "MCSDK.h"
 
 @interface ViewController ()
 

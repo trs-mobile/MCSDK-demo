@@ -2,7 +2,7 @@
 //  main.m
 //  MCSDKDemo
 //
-//  Created by  TRS on 2019/6/27.
+//  Created by  TRS on 2019/7/5.
 //  Copyright © 2019  TRS. All rights reserved.
 //
 

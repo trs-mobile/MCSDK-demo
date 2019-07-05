@@ -25,43 +25,33 @@
     url = [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     
     // 请求body参数
-    NSDictionary *__parameters = @{@"data":[SM4Helper changeSM4DataToStr:[SM4Helper SM4EncodeWithDic:parameters]]};
+    NSString *body = [NSString stringWithFormat:@"data=%@", [SM4Helper changeSM4DataToStr:[SM4Helper SM4EncodeWithDic:parameters]]];
+    
+    // 发起请求
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url] ];
+    request.HTTPMethod = @"POST";
+    request.timeoutInterval = 60;
+    request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        if(error) {
+            
+            //NSLog(@"请求失败 : %@ --> %@", url, error.localizedDescription);
+            if(completion) {completion(NO, nil, error);}
+        }
+        else {
 
-    //请求数据
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.requestSerializer.cachePolicy = NSURLRequestReloadIgnoringCacheData;
-    manager.responseSerializer = [AFHTTPResponseSerializer new];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",
-                                                         @"text/json",
-                                                         @"text/javascript",
-                                                         @"text/html",
-                                                         @"text/plain",
-                                                         @"application/xml",
-                                                         @"text/xml", nil];
+            //NSLog(@"请求成功 : %@ --> %ld", url, ((NSHTTPURLResponse *)task.response).statusCode);
+            NSString *strEncode = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            NSDictionary *response = [SM4Helper convertjsonStringToDict:[SM4Helper SM4DecodeWithData: [SM4Helper hexStringToByte:strEncode]]];
+            if(completion) {completion(YES, response, nil);}
+        }
+        
+    }];
     
-    id __success = ^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
-        //NSLog(@"请求成功 : %@ --> %ld", task.response.URL.absoluteString, ((NSHTTPURLResponse *)task.response).statusCode);
-
-        NSString *strEncode = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-        NSDictionary *response = [SM4Helper convertjsonStringToDict:[SM4Helper SM4DecodeWithData: [SM4Helper hexStringToByte:strEncode]]];
-        
-        if(completion) {completion(YES, response, nil);}
-    };
-    
-    id __failure = ^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
-        //NSLog(@"请求失败 : %@ --> %@", (task.response.URL.absoluteString ? : url), error.localizedDescription);
-        
-        if(completion) {completion(NO, nil, error);}
-    };
-    
-    //Creates and runs an `NSURLSessionDataTask` with a `POST` request.
-    [manager POST:url
-       parameters:__parameters
-         progress:nil
-          success:__success
-          failure:__failure];
+    [task resume];
 }
 
 @end
